@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:text="Order Details"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/flav_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flavor: "
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/c_buko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Buko"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flav_txt" />
+
+            <CheckBox
+                android:id="@+id/c_cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Cheese"
+                android:tag="cheese"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_buko" />
+
+            <CheckBox
+                android:id="@+id/c_lanka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Lanka"
+                android:tag="lanka"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_cheese" />
+
+            <CheckBox
+                android:id="@+id/c_kasoy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Kasoy"
+                android:tag="kasoy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_lanka" />
+
+            <CheckBox
+                android:id="@+id/c_cookies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Cookies and Cream"
+                android:tag="cookies"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_kasoy" />
+
+            <CheckBox
+                android:id="@+id/c_fruitSalad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Fruit Salad"
+                android:tag="fruitSalad"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_cookies" />
+
+            <CheckBox
+                android:id="@+id/c_ube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Ube"
+                android:tag="ube"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_fruitSalad" />
+
+            <CheckBox
+                android:id="@+id/c_macapuno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Macapuno"
+                android:tag="macapuno"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/c_ube" />
+
+            <TextView
+                android:id="@+id/size_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:text="Sizes: "
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/r_sizes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="216dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/size_txt">
+
+                <RadioButton
+                    android:id="@+id/r_halfGalon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="Half a Galon"
+                    android:text="Half Galon" />
+
+                <RadioButton
+                    android:id="@+id/r_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="regular"
+                    android:text="Regular" />
+
+                <RadioButton
+                    android:id="@+id/r_jumbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="jumbo"
+                    android:text="Jumbo" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/customer_details_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Custumer Details: "
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/c_macapuno" />
+
+            <TextView
+                android:id="@+id/customer_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Name:"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/customer_details_txt" />
+
+            <EditText
+                android:id="@+id/customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:ems="40"
+                android:inputType="text"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/customer_name_txt"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/customer_address_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Address:"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customer_name" />
+
+            <EditText
+                android:id="@+id/customer_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:ems="40"
+                android:inputType="textPostalAddress"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/customer_address_txt" />
+
+            <TextView
+                android:id="@+id/custumer_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Phone Number:"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customer_address" />
+
+            <EditText
+                android:id="@+id/customer_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:ems="40"
+                android:inputType="number"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/custumer_number_txt" />
+
+            <!--      <TextView-->
+            <!--        android:id="@+id/custumer_land_mark_txt"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginTop="16dp"-->
+            <!--        android:text="Landmark:"-->
+            <!--        android:textSize="10sp"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/customer_number" />-->
+
+            <!--      <EditText-->
+            <!--        android:id="@+id/customer_land_mark"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginTop="-10dp"-->
+            <!--        android:ems="40"-->
+            <!--        android:inputType="number"-->
+            <!--        android:textSize="15sp"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/custumer_land_mark_txt" />-->
+
+            <!--      <TextView-->
+            <!--        android:id="@+id/time_delivery_txt"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginTop="16dp"-->
+            <!--        android:text="Time of Delivery:"-->
+            <!--        android:textSize="10sp"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/customer_land_mark" />-->
+
+            <!--      <EditText-->
+            <!--        android:id="@+id/time_delivery"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_marginTop="-10dp"-->
+            <!--        android:ems="40"-->
+            <!--        android:inputType="datetime"-->
+            <!--        android:textSize="15sp"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/time_delivery_txt" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/custom_button"
+        android:text="Finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
