@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         OrderDB = openOrCreateDatabase("OrderDB", Context.MODE_PRIVATE, null);
-        OrderDB.execSQL("CREATE TABLE IF NOT EXISTS orders(name TEXT, address TEXT, number TEXT, flavor TEXT, size TEXT);");
+        OrderDB.execSQL("CREATE TABLE IF NOT EXISTS orders(id TEXT, name TEXT, address TEXT, number TEXT, flavor TEXT, size TEXT);");
         addList = findViewById(R.id.addList);
         linearLayout = findViewById(R.id.l_layout);
 
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             if (c.moveToFirst()) {
                 Toast.makeText(this, "moveToFirst() working", Toast.LENGTH_SHORT).show();
                 do {
+                    String id = c.getString(c.getColumnIndex("id"));
                     String name = c.getString(c.getColumnIndex("name"));
                     String address = c.getString(c.getColumnIndex("address"));
                     String number = c.getString(c.getColumnIndex("number"));
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     // Create TextView for order ID
                     TextView orderIdTxt = new TextView(this);
                     orderIdTxt.setId(View.generateViewId());
-                    orderIdTxt.setText("#69420");
+                    orderIdTxt.setText("#" + id);
                     orderIdTxt.setTextSize(24);
                     orderIdTxt.setTypeface(null, Typeface.BOLD);
                     constraintLayout.addView(orderIdTxt);

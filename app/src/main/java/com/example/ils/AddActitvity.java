@@ -14,6 +14,8 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 public class AddActitvity extends AppCompatActivity {
     EditText customerName, customerAddress, customerNumber;
     CheckBox buko, cheese, lanka, kasoy, cookies, fruit_salad, ube, macapuno;
@@ -47,6 +49,7 @@ public class AddActitvity extends AppCompatActivity {
             String number = customerNumber.getText().toString().trim();
             String flavor = getSelectedFlavors();
             String size = getSelectedSize();
+            String id = generateRandomId();
 
             if (flavor.isEmpty()) {
                 msg("No", "Select a flavor");
@@ -60,8 +63,9 @@ public class AddActitvity extends AppCompatActivity {
                 msg("No", "Enter a Number");
             } else {
                 OrderDB = openOrCreateDatabase("OrderDB", Context.MODE_PRIVATE, null);
-                OrderDB.execSQL("CREATE TABLE IF NOT EXISTS orders(name TEXT, address TEXT, number TEXT, flavor TEXT, size TEXT);");
+                OrderDB.execSQL("CREATE TABLE IF NOT EXISTS orders(id TEXT, name TEXT, address TEXT, number TEXT, flavor TEXT, size TEXT);");
                 ContentValues cv = new ContentValues();
+                cv.put("id", id);
                 cv.put("name", name);
                 cv.put("address", address);
                 cv.put("number", number);
@@ -71,6 +75,12 @@ public class AddActitvity extends AppCompatActivity {
                 msg("done");
             }
         });
+    }
+
+    private String generateRandomId() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(100000000);
+        return String.format("%08d", randomNumber);
     }
 
     String getSelectedFlavors() {
